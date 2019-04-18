@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BaiduSkyDriveModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Folder">
+    <Key>
+      <PropertyRef Name="Folder_ID" />
+    </Key>
+    <Property Name="Folder_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FounderID" Type="int" Nullable="false" />
+    <Property Name="Folder_Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FatherFolderID" Type="int" Nullable="false" />
+    <Property Name="DeleteState" Type="int" Nullable="false" />
+    <Property Name="DeleteTime" Type="datetime" />
+    <Property Name="EstablishTime" Type="datetime" Nullable="false" />
+    <Property Name="LastUpdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Friend">
+    <Key>
+      <PropertyRef Name="Friend_ID" />
+    </Key>
+    <Property Name="Friend_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Friend_User_ID" Type="int" Nullable="false" />
+    <Property Name="Blacklist" Type="int" Nullable="false" />
+    <Property Name="SendOut" Type="datetime" Nullable="false" />
+    <Property Name="Adopt" Type="int" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Friend_Conversation">
+    <Key>
+      <PropertyRef Name="Conversation_ID" />
+    </Key>
+    <Property Name="Conversation_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sender" Type="int" Nullable="false" />
+    <Property Name="Receiver" Type="int" Nullable="false" />
+    <Property Name="Count" Type="varchar" MaxLength="50" />
+    <Property Name="Conversation_data" Type="datetime" Nullable="false" />
+    <Property Name="Conversation_type" Type="int" Nullable="false" />
+    <Property Name="DeleteShare" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FriendFile_Details">
+    <Key>
+      <PropertyRef Name="FriendFile_DetailsID" />
+    </Key>
+    <Property Name="FriendFile_DetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FriendFile_LibraryID" Type="int" Nullable="false" />
+    <Property Name="FilePath" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FriendFile_Library">
+    <Key>
+      <PropertyRef Name="FriendFile_LibraryID" />
+    </Key>
+    <Property Name="FriendFile_LibraryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Conversation_ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Icon" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Contain" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="Group_ID" />
+    </Key>
+    <Property Name="Group_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Group_Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Group_link" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Group_Number" Type="int" Nullable="false" />
+    <Property Name="Founder" Type="int" Nullable="false" />
+    <Property Name="EstablishTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Group_Conversation">
+    <Key>
+      <PropertyRef Name="Conversation_ID" />
+    </Key>
+    <Property Name="Conversation_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sender" Type="int" Nullable="false" />
+    <Property Name="Receiver_Group" Type="int" Nullable="false" />
+    <Property Name="Count" Type="varchar" MaxLength="50" />
+    <Property Name="Conversation_data" Type="datetime" Nullable="false" />
+    <Property Name="Conversation_type" Type="int" Nullable="false" />
+    <Property Name="DeleteShare" Type="int" />
+  </EntityType>
+  <EntityType Name="Group_personnel">
+    <Key>
+      <PropertyRef Name="Personnelid" />
+    </Key>
+    <Property Name="Personnelid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Group_ID" Type="int" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="GroupNickname" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="JoinTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GroupFile_Details">
+    <Key>
+      <PropertyRef Name="GroupFile_DetailsID" />
+    </Key>
+    <Property Name="GroupFile_DetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupFile_LibraryID" Type="int" />
+    <Property Name="FilePath" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="GroupFile_Library">
+    <Key>
+      <PropertyRef Name="GroupFile_LibraryID" />
+    </Key>
+    <Property Name="GroupFile_LibraryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Conversation_ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Icon" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Contain" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Personal_data">
+    <Key>
+      <PropertyRef Name="Personal_dataID" />
+    </Key>
+    <Property Name="Personal_dataID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Sex" Type="int" />
+    <Property Name="Birthday" Type="datetime" />
+    <Property Name="Blood_type" Type="varchar" MaxLength="10" />
+    <Property Name="PlaceBirth" Type="varchar" MaxLength="20" />
+    <Property Name="PlaceResidence" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Share_data">
+    <Key>
+      <PropertyRef Name="Share_data_ID" />
+    </Key>
+    <Property Name="Share_data_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Share_DataRoute" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreationData" Type="datetime" Nullable="false" />
+    <Property Name="ExpirationData" Type="datetime" Nullable="false" />
+    <Property Name="Extraction_Code" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Permanent" Type="int" Nullable="false" />
+    <Property Name="Share_people" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Skin">
+    <Key>
+      <PropertyRef Name="Skin_ID" />
+    </Key>
+    <Property Name="Skin_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Preview" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="StyleFile" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Store_data">
+    <Key>
+      <PropertyRef Name="Store_data_ID" />
+    </Key>
+    <Property Name="Store_data_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="DataRoute" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Real_FileName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SuffixName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="File_Size" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Folder_ID" Type="int" Nullable="false" />
+    <Property Name="EstablishTime" Type="datetime" Nullable="false" />
+    <Property Name="LastUpdate" Type="datetime" />
+    <Property Name="DeleteState" Type="int" Nullable="false" />
+    <Property Name="DeleteTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="User_Password" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="User_Phone" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="User_Two_Password" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="FriendNews" Type="int" Nullable="false" />
+    <Property Name="JoinGroup" Type="int" Nullable="false" />
+    <Property Name="Head_portrait" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RegisterTime" Type="datetime" Nullable="false" />
+    <Property Name="Skin_Style" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Folder_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Folder" Type="Self.Folder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Folder">
+        <PropertyRef Name="FounderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Friend_Conversation_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Friend_Conversation" Type="Self.Friend_Conversation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Friend_Conversation">
+        <PropertyRef Name="Sender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Friend_Conversation_User1">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Friend_Conversation" Type="Self.Friend_Conversation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Friend_Conversation">
+        <PropertyRef Name="Receiver" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Friend_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Friend" Type="Self.Friend" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Friend">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FriendFile_Details_FriendFile_Library">
+    <End Role="FriendFile_Library" Type="Self.FriendFile_Library" Multiplicity="1" />
+    <End Role="FriendFile_Details" Type="Self.FriendFile_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FriendFile_Library">
+        <PropertyRef Name="FriendFile_LibraryID" />
+      </Principal>
+      <Dependent Role="FriendFile_Details">
+        <PropertyRef Name="FriendFile_LibraryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FriendFile_Library_Friend_Conversation">
+    <End Role="Friend_Conversation" Type="Self.Friend_Conversation" Multiplicity="1" />
+    <End Role="FriendFile_Library" Type="Self.FriendFile_Library" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Friend_Conversation">
+        <PropertyRef Name="Conversation_ID" />
+      </Principal>
+      <Dependent Role="FriendFile_Library">
+        <PropertyRef Name="Conversation_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Conversation_Group">
+    <End Role="Group" Type="Self.Group" Multiplicity="1" />
+    <End Role="Group_Conversation" Type="Self.Group_Conversation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="Group_ID" />
+      </Principal>
+      <Dependent Role="Group_Conversation">
+        <PropertyRef Name="Receiver_Group" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Conversation_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Group_Conversation" Type="Self.Group_Conversation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Group_Conversation">
+        <PropertyRef Name="Sender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_personnel_Group">
+    <End Role="Group" Type="Self.Group" Multiplicity="1" />
+    <End Role="Group_personnel" Type="Self.Group_personnel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="Group_ID" />
+      </Principal>
+      <Dependent Role="Group_personnel">
+        <PropertyRef Name="Group_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_personnel_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Group_personnel" Type="Self.Group_personnel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Group_personnel">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Group" Type="Self.Group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Group">
+        <PropertyRef Name="Founder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupFile_Details_GroupFile_Library">
+    <End Role="GroupFile_Library" Type="Self.GroupFile_Library" Multiplicity="0..1" />
+    <End Role="GroupFile_Details" Type="Self.GroupFile_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupFile_Library">
+        <PropertyRef Name="GroupFile_LibraryID" />
+      </Principal>
+      <Dependent Role="GroupFile_Details">
+        <PropertyRef Name="GroupFile_LibraryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupFile_Library_Group_Conversation">
+    <End Role="Group_Conversation" Type="Self.Group_Conversation" Multiplicity="1" />
+    <End Role="GroupFile_Library" Type="Self.GroupFile_Library" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group_Conversation">
+        <PropertyRef Name="Conversation_ID" />
+      </Principal>
+      <Dependent Role="GroupFile_Library">
+        <PropertyRef Name="Conversation_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personal_data_User1">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Personal_data" Type="Self.Personal_data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Personal_data">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Share_data_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Share_data" Type="Self.Share_data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Share_data">
+        <PropertyRef Name="Share_people" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Skin_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Skin" Type="Self.Skin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Skin">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_data_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Store_data" Type="Self.Store_data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Store_data">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BaiduSkyDriveModelStoreContainer">
+    <EntitySet Name="Folder" EntityType="Self.Folder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Friend" EntityType="Self.Friend" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Friend_Conversation" EntityType="Self.Friend_Conversation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FriendFile_Details" EntityType="Self.FriendFile_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FriendFile_Library" EntityType="Self.FriendFile_Library" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group_Conversation" EntityType="Self.Group_Conversation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group_personnel" EntityType="Self.Group_personnel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupFile_Details" EntityType="Self.GroupFile_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupFile_Library" EntityType="Self.GroupFile_Library" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personal_data" EntityType="Self.Personal_data" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Share_data" EntityType="Self.Share_data" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Skin" EntityType="Self.Skin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Store_data" EntityType="Self.Store_data" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Folder_User" Association="Self.FK_Folder_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Folder" EntitySet="Folder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Friend_Conversation_User" Association="Self.FK_Friend_Conversation_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Friend_Conversation" EntitySet="Friend_Conversation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Friend_Conversation_User1" Association="Self.FK_Friend_Conversation_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Friend_Conversation" EntitySet="Friend_Conversation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Friend_User" Association="Self.FK_Friend_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Friend" EntitySet="Friend" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FriendFile_Details_FriendFile_Library" Association="Self.FK_FriendFile_Details_FriendFile_Library">
+      <End Role="FriendFile_Library" EntitySet="FriendFile_Library" />
+      <End Role="FriendFile_Details" EntitySet="FriendFile_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FriendFile_Library_Friend_Conversation" Association="Self.FK_FriendFile_Library_Friend_Conversation">
+      <End Role="Friend_Conversation" EntitySet="Friend_Conversation" />
+      <End Role="FriendFile_Library" EntitySet="FriendFile_Library" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Conversation_Group" Association="Self.FK_Group_Conversation_Group">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="Group_Conversation" EntitySet="Group_Conversation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Conversation_User" Association="Self.FK_Group_Conversation_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Group_Conversation" EntitySet="Group_Conversation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_personnel_Group" Association="Self.FK_Group_personnel_Group">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="Group_personnel" EntitySet="Group_personnel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_personnel_User" Association="Self.FK_Group_personnel_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Group_personnel" EntitySet="Group_personnel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_User" Association="Self.FK_Group_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Group" EntitySet="Group" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupFile_Details_GroupFile_Library" Association="Self.FK_GroupFile_Details_GroupFile_Library">
+      <End Role="GroupFile_Library" EntitySet="GroupFile_Library" />
+      <End Role="GroupFile_Details" EntitySet="GroupFile_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupFile_Library_Group_Conversation" Association="Self.FK_GroupFile_Library_Group_Conversation">
+      <End Role="Group_Conversation" EntitySet="Group_Conversation" />
+      <End Role="GroupFile_Library" EntitySet="GroupFile_Library" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personal_data_User1" Association="Self.FK_Personal_data_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Personal_data" EntitySet="Personal_data" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Share_data_User" Association="Self.FK_Share_data_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Share_data" EntitySet="Share_data" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Skin_User" Association="Self.FK_Skin_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Skin" EntitySet="Skin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_data_User" Association="Self.FK_Store_data_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Store_data" EntitySet="Store_data" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

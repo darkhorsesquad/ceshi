@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BaiduSkyDriveModelStoreContainer" CdmEntityContainer="BaiduSkyDriveEntities">
+    <EntitySetMapping Name="Folders">
+      <EntityTypeMapping TypeName="BaiduSkyDriveModel.Folder">
+        <MappingFragment StoreEntitySet="Folder">
+          <ScalarProperty Name="Folder_ID" ColumnName="Folder_ID" />
+          <ScalarProperty Name="FounderID" ColumnName="FounderID" />
+          <ScalarProperty Name="Folder_Name" ColumnName="Folder_Name" />
+          <ScalarProperty Name="FatherFolderID" ColumnName="FatherFolderID" />
+          <ScalarProperty Name="DeleteState" ColumnName="DeleteState" />
+          <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
+          <ScalarProperty Name="EstablishTime" ColumnName="EstablishTime" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Friends">
+      <EntityTypeMapping TypeName="BaiduSkyDriveModel.Friend">
+        <MappingFragment StoreEntitySet="Friend">
+          <ScalarProperty Name="Friend_ID" ColumnName="Friend_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Friend_User_ID" ColumnName="Friend_User_ID" />
+          <ScalarProperty Name="Blacklist" ColumnName="Blacklist" />
+          <ScalarProperty Name="SendOut" ColumnName="SendOut" />
+          <ScalarProperty Name="Adopt" ColumnName="Adopt" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Friend_Conversation">
+      <EntityTypeMapping TypeName="BaiduSkyDriveModel.Friend_Conversation">
+        <MappingFragment StoreEntitySet="Friend_Conversation">
+          <ScalarProperty Name="Conversation_ID" ColumnName="Conversation_ID" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Conversation_data" ColumnName="Conversation_data" />
+          <ScalarProperty Name="Conversation_type" ColumnName="Conversation_type" />
+          <ScalarProperty Name="DeleteShare" ColumnName="DeleteShare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FriendFile_Details">
+      <EntityTypeMapping TypeName="BaiduSkyDriveModel.FriendFile_Details">
+        <MappingFragment StoreEntitySet="FriendFile_Details">
+          <ScalarProperty Name="FriendFile_DetailsID" ColumnName="FriendFile_DetailsID" />
+          <ScalarProperty Name="FriendFile_LibraryID" ColumnName="FriendFile_LibraryID" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FriendFile_Library">
+      <EntityTypeMapping TypeName="BaiduSkyDriveModel.FriendFile_Library">
+        <MappingFragment StoreEntitySet="FriendFile_Library">
+          <ScalarProperty Name="FriendFile_LibraryID" ColumnName="FriendFile_LibraryID" />
+          <ScalarProperty Name="Conversation_ID" ColumnName="Conversation_ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Contain" ColumnName="Contain" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="BaiduSkyDriveModel.Group">
+        <MappingFragment StoreEntitySet="Group">
+          <ScalarProperty Name="Group_ID" ColumnName="Group_ID" />
+          <ScalarProperty Name="Group_Name" ColumnName="Group_Name" />
+          <ScalarProperty Name="Group_link" ColumnName="Group_link" />
+          <ScalarProperty Name="Group_Number" ColumnName="Group_Number" />
+          <ScalarProperty Name="Founder" ColumnName="Founder" />
+          <ScalarProperty Name="EstablishTime" ColumnName="EstablishTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group_Conversation">
+      <EntityTypeMapping TypeName="BaiduSkyDriveModel.Group_Conversation">
+        <MappingFragment StoreEntitySet="Group_Conversation">
+          <ScalarProperty Name="Conversation_ID" ColumnName="Conversation_ID" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="Receiver_Group" ColumnName="Receiver_Group" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Conversation_data" ColumnName="Conversation_data" />
+          <ScalarProperty Name="Conversation_type" ColumnName="Conversation_type" />
+          <ScalarProperty Name="DeleteShare" ColumnName="DeleteShare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group_personnel">
+      <EntityTypeMapping TypeName="BaiduSkyDriveModel.Group_personnel">
+        <MappingFragment StoreEntitySet="Group_personnel">
+          <ScalarProperty Name="Personnelid" ColumnName="Personnelid" />
+          <ScalarProperty Name="Group_ID" ColumnName="Group_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="GroupNickname" ColumnName="GroupNickname" />
+          <ScalarProperty Name="JoinTime" ColumnName="JoinTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupFile_Details">
+      <EntityTypeMapping TypeName="BaiduSkyDriveModel.GroupFile_Details">
+        <MappingFragment StoreEntitySet="GroupFile_Details">
+          <ScalarProperty Name="GroupFile_DetailsID" ColumnName="GroupFile_DetailsID" />
+          <ScalarProperty Name="GroupFile_LibraryID" ColumnName="GroupFile_LibraryID" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupFile_Library">
+      <EntityTypeMapping TypeName="BaiduSkyDriveModel.GroupFile_Library">
+        <MappingFragment StoreEntitySet="GroupFile_Library">
+          <ScalarProperty Name="GroupFile_LibraryID" ColumnName="GroupFile_LibraryID" />
+          <ScalarProperty Name="Conversation_ID" ColumnName="Conversation_ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Contain" ColumnName="Contain" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personal_data">
+      <EntityTypeMapping TypeName="BaiduSkyDriveModel.Personal_data">
+        <MappingFragment StoreEntitySet="Personal_data">
+          <ScalarProperty Name="Personal_dataID" ColumnName="Personal_dataID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Blood_type" ColumnName="Blood_type" />
+          <ScalarProperty Name="PlaceBirth" ColumnName="PlaceBirth" />
+          <ScalarProperty Name="PlaceResidence" ColumnName="PlaceResidence" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Share_data">
+      <EntityTypeMapping TypeName="BaiduSkyDriveModel.Share_data">
+        <MappingFragment StoreEntitySet="Share_data">
+          <ScalarProperty Name="Share_data_ID" ColumnName="Share_data_ID" />
+          <ScalarProperty Name="Share_DataRoute" ColumnName="Share_DataRoute" />
+          <ScalarProperty Name="CreationData" ColumnName="CreationData" />
+          <ScalarProperty Name="ExpirationData" ColumnName="ExpirationData" />
+          <ScalarProperty Name="Extraction_Code" ColumnName="Extraction_Code" />
+          <ScalarProperty Name="Permanent" ColumnName="Permanent" />
+          <ScalarProperty Name="Share_people" ColumnName="Share_people" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skins">
+      <EntityTypeMapping TypeName="BaiduSkyDriveModel.Skin">
+        <MappingFragment StoreEntitySet="Skin">
+          <ScalarProperty Name="Skin_ID" ColumnName="Skin_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Preview" ColumnName="Preview" />
+          <ScalarProperty Name="StyleFile" ColumnName="StyleFile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Store_data">
+      <EntityTypeMapping TypeName="BaiduSkyDriveModel.Store_data">
+        <MappingFragment StoreEntitySet="Store_data">
+          <ScalarProperty Name="Store_data_ID" ColumnName="Store_data_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="DataRoute" ColumnName="DataRoute" />
+          <ScalarProperty Name="Real_FileName" ColumnName="Real_FileName" />
+          <ScalarProperty Name="SuffixName" ColumnName="SuffixName" />
+          <ScalarProperty Name="File_Size" ColumnName="File_Size" />
+          <ScalarProperty Name="Folder_ID" ColumnName="Folder_ID" />
+          <ScalarProperty Name="EstablishTime" ColumnName="EstablishTime" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+          <ScalarProperty Name="DeleteState" ColumnName="DeleteState" />
+          <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="BaiduSkyDriveModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+          <ScalarProperty Name="User_Phone" ColumnName="User_Phone" />
+          <ScalarProperty Name="User_Two_Password" ColumnName="User_Two_Password" />
+          <ScalarProperty Name="FriendNews" ColumnName="FriendNews" />
+          <ScalarProperty Name="JoinGroup" ColumnName="JoinGroup" />
+          <ScalarProperty Name="Head_portrait" ColumnName="Head_portrait" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="Skin_Style" ColumnName="Skin_Style" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

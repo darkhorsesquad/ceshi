@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{9B16A2C4-3B85-4544-ADE0-FFCE79B158C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baidu.Web", "Baidu.Web\Baidu.Web.csproj", "{29B99BF5-C797-4BAB-8102-4FC29DA65F86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{536CB7BA-DA93-4A2A-BD11-C8210285E46B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B16A2C4-3B85-4544-ADE0-FFCE79B158C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B16A2C4-3B85-4544-ADE0-FFCE79B158C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B16A2C4-3B85-4544-ADE0-FFCE79B158C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B16A2C4-3B85-4544-ADE0-FFCE79B158C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29B99BF5-C797-4BAB-8102-4FC29DA65F86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29B99BF5-C797-4BAB-8102-4FC29DA65F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29B99BF5-C797-4BAB-8102-4FC29DA65F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29B99BF5-C797-4BAB-8102-4FC29DA65F86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{536CB7BA-DA93-4A2A-BD11-C8210285E46B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{536CB7BA-DA93-4A2A-BD11-C8210285E46B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{536CB7BA-DA93-4A2A-BD11-C8210285E46B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{536CB7BA-DA93-4A2A-BD11-C8210285E46B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,81 @@
+﻿@model List<Model.Store_data>
+@{
+    ViewBag.Title = "OpenFolder";
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script>
+    $(function () {
+
+        var aa = $(".qwer");
+        // ①为input设定change事件
+
+        aa.change(function () {
+            //    ②如果value不为空，调用文件加载方法
+            if ($(this).val() != "") {
+                //alert("你选择了文件");
+                //触发表单的提交时间
+                $("form").submit();
+
+            }
+        });
+
+    })
+</script>
+
+<h2>首页</h2>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<a href="/Home/Login">退出</a>
+
+<form method="post" enctype="multipart/form-data" action="" name="form">
+    <label for="lala" style="font-size:12px;padding:10px 30px;background-color:#3b8cff;color:white;border:none;border-radius:5px" name="file[]">上传文件</label>
+    <input id="lala" class="qwer" title="点击选择文件" type="file" name="files[]" style="display: none;" />
+
+    <label for="hhh" style="font-size:12px;padding:10px 30px;background-color:#3b8cff;color:white;border:none;border-radius:5px">上传文件夹</label>
+    <input id="hhh" class="qwer" title="点击选择文件" type="file" name="files[]" style="display: none;" multiple="multiple" webkitdirectory mozdirectory />
+</form>
+
+<div>
+    <a href="/Home/Index">全部文件</a>>
+    @foreach (var item in ViewBag.FatherFolderName)
+    {
+        <a href="/Home/OpenFolder?FolderName=@item">@item></a>
+    }
+    
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>文件名</td>
+            <td>大小</td>
+            <td>修改日期</td>
+            <td>操作</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Folder)
+        {
+            <tr>
+                <td><a href="/Home/OpenFolder?FolderName=@item.Folder_Name">@item.Folder_Name</a></td>
+                <td>--</td>
+                <td>@item.EstablishTime</td>
+
+            </tr>
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Real_FileName</td>
+                <td>@item.File_Size</td>
+                <td>@item.EstablishTime</td>
+                <td><a href="/Home/Download?id=@item.Store_data_ID">下载</a></td>
+            </tr>
+        }
+
+
+
+    </tbody>
+</table>
+
+
+
