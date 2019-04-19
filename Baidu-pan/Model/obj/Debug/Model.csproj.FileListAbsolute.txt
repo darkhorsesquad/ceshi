@@ -1,0 +1,11 @@
+E:\C#作业\Baidu-pan\Model\bin\Debug\Model.dll.config
+E:\C#作业\Baidu-pan\Model\bin\Debug\Model.dll
+E:\C#作业\Baidu-pan\Model\bin\Debug\Model.pdb
+E:\C#作业\Baidu-pan\Model\bin\Debug\EntityFramework.dll
+E:\C#作业\Baidu-pan\Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\C#作业\Baidu-pan\Model\bin\Debug\EntityFramework.xml
+E:\C#作业\Baidu-pan\Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\C#作业\Baidu-pan\Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\C#作业\Baidu-pan\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+E:\C#作业\Baidu-pan\Model\obj\Debug\Model.dll
+E:\C#作业\Baidu-pan\Model\obj\Debug\Model.pdb

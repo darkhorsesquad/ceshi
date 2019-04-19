@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7618aec9f3574e2488be517585aad35c" Name="Diagram1">
+        <EntityTypeShape EntityType="BaiduSkyDriveModel.Folder" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaiduSkyDriveModel.Friend" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaiduSkyDriveModel.Friend_Conversation" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaiduSkyDriveModel.FriendFile_Details" Width="1.5" PointX="7.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaiduSkyDriveModel.FriendFile_Library" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaiduSkyDriveModel.Group" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaiduSkyDriveModel.Group_Conversation" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaiduSkyDriveModel.Group_personnel" Width="1.5" PointX="8.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaiduSkyDriveModel.GroupFile_Details" Width="1.5" PointX="9.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaiduSkyDriveModel.GroupFile_Library" Width="1.5" PointX="7.5" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaiduSkyDriveModel.Personal_data" Width="1.5" PointX="3" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaiduSkyDriveModel.Share_data" Width="1.5" PointX="3" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaiduSkyDriveModel.Skin" Width="1.5" PointX="3" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaiduSkyDriveModel.Store_data" Width="1.5" PointX="3" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaiduSkyDriveModel.User" Width="1.5" PointX="0.75" PointY="14.5" IsExpanded="true" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_Folder_User" ManuallyRouted="false" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_Friend_User" ManuallyRouted="false" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_Friend_Conversation_User" ManuallyRouted="false" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_Friend_Conversation_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_FriendFile_Library_Friend_Conversation" ManuallyRouted="false" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_FriendFile_Details_FriendFile_Library" ManuallyRouted="false" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_Group_Conversation_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_Group_personnel_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_Group_User" ManuallyRouted="false" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_Group_Conversation_User" ManuallyRouted="false" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_GroupFile_Library_Group_Conversation" ManuallyRouted="false" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_Group_personnel_User" ManuallyRouted="false" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_GroupFile_Details_GroupFile_Library" ManuallyRouted="false" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_Personal_data_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_Share_data_User" ManuallyRouted="false" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_Skin_User" ManuallyRouted="false" />
+        <AssociationConnector Association="BaiduSkyDriveModel.FK_Store_data_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

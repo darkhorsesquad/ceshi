@@ -1,0 +1,156 @@
+﻿@model List<Model.Store_data>
+@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+
+
+<h2>首页</h2>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<a href="/Home/Login">退出</a>
+
+<form method="post" enctype="multipart/form-data" action="" name="form">
+    <label for="lala" style="font-size:12px;padding:10px 30px;background-color:#3b8cff;color:white;border:none;border-radius:5px" name="file[]">上传文件</label>
+    <input id="lala" class="qwer" title="点击选择文件" type="file" name="files[]" style="display: none;" />
+
+    <label for="hhh" style="font-size:12px;padding:10px 30px;background-color:#3b8cff;color:white;border:none;border-radius:5px">上传文件夹</label>
+    <input id="hhh" class="qwer" title="点击选择文件" type="file" name="files[]" style="display: none;" multiple="multiple" webkitdirectory mozdirectory />
+</form>
+<div class="daohanglan">
+    <span class="all">全部文件</span>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <td>文件名</td>
+            <td>大小</td>
+            <td>修改日期</td>
+            <td>操作</td>
+        </tr>
+    </thead>
+    <tbody class="tbodys">
+        @foreach (var item in ViewBag.Folder)
+        {
+            <tr class="Folders">
+                @*<td><a href="/Home/OpenFolder?FolderName=@item.Folder_Name">@item.Folder_Name</a></td>*@
+                <td><a href="javascript:void" class="Folder" onclick="OpenFolder('@item.Folder_Name')">@item.Folder_Name</a></td>
+                <td>--</td>
+                <td>@item.EstablishTime</td>
+                <td></td>
+
+            </tr>
+        }
+        @foreach (var item in Model)
+        {
+            <tr class="wenjian">
+                <td>@item.Real_FileName</td>
+                <td>@item.File_Size</td>
+                <td>@item.EstablishTime</td>
+                <td><a href="/Home/Download?id=@item.Store_data_ID">下载</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+<script>
+    $(function () {
+
+        var aa = $(".qwer");
+        // ①为input设定change事件
+
+        aa.change(function () {
+            //    ②如果value不为空，调用文件加载方法
+            if ($(this).val() != "") {
+                //alert("你选择了文件");
+                //触发表单的提交事件
+                $("form").submit();
+
+            }
+        });
+
+        //$(".Folder").click(function () {
+        //    var FolderName = $(this).text();
+        //    alert(FolderName);
+        //    $.ajax({
+        //        url: "/Home/OpenFolder2",
+        //        data: JSON.stringify({ "FolderName": FolderName }),
+        //        type: "post",
+        //        contentType: "application/json",
+        //        success: function (data) {
+        //            $(".tbodys").empty();
+        //            $.each(data, function () {
+        //                alert(this.Folder_Name);
+        //                $(".tbodys").append("<tr class='Folders'><td><a href='javascript:void' class='Folder'>" + this.Folder_Name + "</a></td> <td><a href='javascript:void'>--</a></td> <td><a href='javascript:void'>" + this.EstablishTime + "</a></td> <td><a href='javascript:void'></a></td></tr>");
+        //            });
+        //        }, error: function (result) {
+        //            alert("Error" + result.responseText);
+        //        }
+        //    });
+        //});
+
+    });
+
+    function OpenFolder(input) {
+
+        $.ajax({
+            url: "/Home/OpenFolder2",
+            data: JSON.stringify({ "FolderName": input }),
+            type: "post",
+            contentType: "application/json",
+            success: function (data) {
+                $(".tbodys").empty();
+                if(data!=null){
+                    
+                    $.each(data, function () {
+                        //alert(this.Folder_Name);
+                        $(".tbodys").append("<tr class='Folders'><td><a href='javascript:void' class='Folder'  >" + this.Folder_Name + "</a></td> <td>--</td> <td>" + this.EstablishTime + "</td> <td></td></tr>");
+
+
+                    });
+
+                    $.ajax({
+                        url: "/Home/OpenFolder3",
+                        data: JSON.stringify({ "FolderName": input }),
+                        type: "post",
+                        contentType: "application/json",
+                        success: function (data) {d
+                            if (data != null) {
+                                $.each(data, function () {
+                                    //alert(this.Folder_Name);
+                                    $(".tbodys").append("<tr><td>" + this.Real_FileName + "</td> <td>" + this.File_Size + "</td> <td>" + this.EstablishTime + "</td> <td><a href='/Home/Download?id=" + this.Store_data_ID + "'>下载</a></td></tr>");
+
+
+                                });
+
+
+                            }
+
+
+                        }, error: function (result) {
+                            alert("Error" + result.responseText);
+                        }
+                    });
+
+                    $(document).on("click", ".Folder", function () {
+                        var input = $(this).text();
+                        OpenFolder(input);
+
+                    })
+                }
+                
+            }, error: function (result) {
+                alert("Error" + result.responseText);
+            }
+        });
+
+        var text = $("all").text();
+        if(text=="全部文件"){
+            
+        }
+        
+    };
+
+
+</script>
